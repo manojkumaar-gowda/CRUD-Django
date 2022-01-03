@@ -1,0 +1,29 @@
+{% extends 'crudapp/base.html' %}
+{% block head %}
+<title>CRUD | Add</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron bg-primary text-white">
+        <h1>CRUD APP</h1>
+               
+    </div>
+</div>
+
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="usr">New Task:</label>
+            <input type="text" class="form-control" id="usr" name="task" autofocus>
+        </div>
+        <button class="btn btn-success">Add Task</button>
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

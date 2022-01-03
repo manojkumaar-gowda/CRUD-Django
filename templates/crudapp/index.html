@@ -1,0 +1,37 @@
+{% extends 'crudapp/base.html' %}
+{% block head %}
+<title>CRUD | Home</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron bg-primary text-white">
+        <h1>CRUD APP</h1>
+        
+        <div>
+            <a href="/add" class="btn btn-success" style="margin-bottom:2%;float:right">Add New <i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="position:relative">
+    {% for t in taskskey %}
+    <div class="row" style="margin-bottom:2px;border-radius:5px;padding:10px;background-color:black;color:White">
+        <div class="col-9" style="color:white">
+            {{ t.task }}
+        </div>
+        <div class="col-1" style="text-align:center">
+            <a href="/delete/{{ t.id }}" style="color:white;"><i class="far fa-trash-alt"></i></a>
+        </div>
+        <div class="col-1" style="text-align:center">
+            <a href="/edit/{{ t.id }}" style="color:white;"><i class="fas fa-edit"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
